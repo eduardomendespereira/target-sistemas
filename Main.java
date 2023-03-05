@@ -4,6 +4,7 @@ public class Main {
         quest1();
         quest2();
         quest3();
+        quest4();
     }
 
     public static void quest1() {
@@ -67,6 +68,29 @@ public class Main {
         int f1 = 2, f2 = 10, f3 = 12, f4 = 16, f5 = 17, f6 = 18, f7 = 19;
         int f8 = f7 + 1;
         System.out.println("Proximo elemento da sequencia f): " + f8);
+    }
+
+    public static void quest4(){
+        int distanciaTotal = 100; // distância entre as cidades
+        double velocidadeCarro = 110; // km/h
+        double velocidadeCaminhao = 80; // km/h
+        int pedagios = 2; // quantidade de pedágios no trajeto
+        int tempoPedagioCaminhao = 5; // minutos que o caminhão leva a mais em cada pedágio
+
+        // converte a velocidade do carro e do caminhão de km/h para km/min
+        double velocidadeCarroMin = velocidadeCarro / 60;
+        double velocidadeCaminhaoMin = velocidadeCaminhao / 60;
+
+        // calcula a distância percorrida pelo carro e pelo caminhão até o cruzamento
+        double tempoCarroCruzamento = distanciaTotal / velocidadeCarroMin;
+        double tempoCaminhaoCruzamento = (distanciaTotal / velocidadeCaminhaoMin) + (pedagios * tempoPedagioCaminhao);
+
+        // verifical qual veículo demora menos tempo
+        if (tempoCarroCruzamento < tempoCaminhaoCruzamento) {
+            System.out.println("O carro esta mais proximo de Ribeirao Preto.");
+        } else {
+            System.out.println("O caminhão esta mais proximo de Ribeirao Preto.");
+        }
     }
 
 }
