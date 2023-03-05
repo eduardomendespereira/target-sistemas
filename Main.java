@@ -5,6 +5,7 @@ public class Main {
         quest2();
         quest3();
         quest4();
+        quest5();
     }
 
     public static void quest1() {
@@ -91,6 +92,25 @@ public class Main {
         } else {
             System.out.println("O caminhão esta mais proximo de Ribeirao Preto.");
         }
+    }
+
+    public static void quest5(){
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Digite uma string: ");
+        String texto = input.nextLine();
+
+        char[] caracteres = texto.toCharArray();
+
+        int tamanho = caracteres.length;
+        for (int i = 0; i < tamanho / 2; i++) {
+            char temp = caracteres[i];
+            caracteres[i] = caracteres[tamanho - 1 - i];
+            caracteres[tamanho - 1 - i] = temp;
+        }
+
+        String textoInvertido = new String(caracteres);
+        System.out.println(textoInvertido);
     }
 
 }
